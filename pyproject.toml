@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-supply-chain-env"
+version = "1.0.0"
+description = "Supply Chain Digital Twin — Intelligent Warehouse Management Environment for OpenEnv"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core[core]>=0.2.2",
+    "fastapi>=0.115.0",
+    "pydantic>=2.0.0",
+    "uvicorn>=0.24.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+ui = [
+    "openai>=1.0.0",
+    "streamlit>=1.30.0",
+    "pandas>=2.0.0",
+    "plotly>=5.0.0",
+]
+
+[project.scripts]
+server = "supply_chain_env.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["supply_chain_env", "supply_chain_env.server"]
+package-dir = { "supply_chain_env" = ".", "supply_chain_env.server" = "server" }
