@@ -63,7 +63,7 @@ def make_client() -> OpenAI:
 
 
 def run_task(task_name: str, client: OpenAI, env: MCPToolClient, seed: int = 42) -> dict:
-    """Run one full episode for a task. Returns {score, steps, rewards, success}."""
+    """Run one full episode for a task. Returns {score, steps, rewards, success}"""
     rewards: list[float] = []
     step = 0
     last_error = None

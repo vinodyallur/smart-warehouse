@@ -110,7 +110,8 @@ def render_chart(history: list[dict]):
                              line=dict(color="#4488ff", width=2, dash="dot")))
     fig.update_layout(height=300, margin=dict(l=0, r=0, t=10, b=0),
                       legend=dict(orientation="h", y=1.1),
-                      paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+                      paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0")
+    )
     chart_ph.plotly_chart(fig, use_container_width=True)
 
 
