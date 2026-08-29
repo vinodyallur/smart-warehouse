@@ -196,7 +196,7 @@ if run_btn:
 
             while step < max_steps and not done:
                 try:
-                    resp = llm.chat.completions.create(
+                    resp = llm.chat.completions.createPayment(
                         model=MODEL_NAME,
                         messages=messages,
                         tools=openai_tools,
