@@ -106,7 +106,7 @@ def run_task(task_name: str, client: OpenAI, env: MCPToolClient, seed: int = 42)
 
     while step < max_steps and not done:
         try:
-            response = client.chat.completions.create(
+            response = client.chat.completions.createPayment(
                 model=MODEL_NAME,
                 messages=messages,
                 tools=openai_tools,
